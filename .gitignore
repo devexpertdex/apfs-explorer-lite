@@ -1,0 +1,38 @@
+# Virtual environments
+.venv/
+venv/
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Packaging output
+build/
+dist/
+*.egg-info/
+
+# Local logs and disk images used for manual testing (never commit real disk data)
+logs/
+*.log
+*.img
+*.dmg
+*.raw
+*.dd
+
+# Editors / OS (the shared VS Code launch, settings and tasks are committed)
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.idea/
+Thumbs.db
+desktop.ini
+
+# Real APFS test images (downloaded by scripts/fetch_test_images.py)
+tests/data/external/
+drive-report.txt
+hardware-results.json
+test-run.log

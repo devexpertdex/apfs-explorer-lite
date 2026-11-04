@@ -1,0 +1,23 @@
+{
+  // Run and Debug (Ctrl+Shift+D). Uses the project's .venv (see settings.json).
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "APFS Explorer Lite",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "apfs_explorer_lite",
+      "cwd": "${workspaceFolder}",
+      "justMyCode": true
+    },
+    {
+      "name": "Self-test (test images)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "apfs_explorer_lite.tools",
+      "args": ["selftest", "--image", "tests/data/external/apfs.dmg"],
+      "cwd": "${workspaceFolder}",
+      "console": "integratedTerminal"
+    }
+  ]
+}

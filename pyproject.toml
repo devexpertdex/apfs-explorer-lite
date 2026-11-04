@@ -1,0 +1,34 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apfs-explorer-lite"
+version = "0.1.0"
+description = "Read-only APFS browser for Windows that copies data to a local NTFS folder."
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "PySide6-Essentials==6.12.0",
+    "libfsapfs-python==20261030",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.2.0",
+    "pyinstaller==6.22.3",
+]
+
+[project.gui-scripts]
+apfs-explorer-lite = "apfs_explorer_lite.app:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+apfs_explorer_lite = ["resources/*.ico", "resources/*.png"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"

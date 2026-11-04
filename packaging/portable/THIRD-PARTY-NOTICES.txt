@@ -1,0 +1,41 @@
+APFS Explorer Lite - third-party software notices
+==================================================
+
+This program is distributed in PyInstaller's "one-folder" layout. Each library
+below is a separate, replaceable file in the "_internal" folder, so you can
+swap in your own build of an LGPL library (as the LGPL allows) without
+changing the rest of the program.
+
+libfsapfs / pyfsapfs (APFS reader)
+  Files:    _internal\{PYFSAPFS_FILE}
+  Version:  libfsapfs-python {LIBFSAPFS_VERSION}
+  License:  GNU Lesser General Public License v3.0 or later (licenses\LGPL-3.0.txt,
+            which builds on licenses\GPL-3.0.txt)
+  Source:   https://github.com/libyal/libfsapfs  (Copyright Joachim Metz)
+  Unmodified. To replace it, install another build of libfsapfs-python for the
+  same Python version and put its pyfsapfs*.pyd in _internal.
+
+Qt for Python (PySide6, shiboken6) and Qt 6
+  Files:    _internal\PySide6\*, _internal\shiboken6\*
+  Version:  PySide6-Essentials {PYSIDE_VERSION}
+  License:  GNU Lesser General Public License v3.0 (licenses\LGPL-3.0.txt)
+  Source:   https://code.qt.io/cgit/pyside/pyside-setup.git  and  https://download.qt.io/
+  Qt includes further third-party components (for example zlib, libpng, FreeType,
+  HarfBuzz, PCRE2); see https://doc.qt.io/qt-6/licenses-used-in-qt.html
+  Unmodified. To replace Qt, swap the Qt6*.dll / PySide6 files for a compatible build.
+
+Python {PYTHON_VERSION}
+  Files:    _internal\python3*.dll, _internal\*.pyd, _internal\base_library.zip
+  License:  Python Software Foundation License; the Windows build includes OpenSSL,
+            libffi, bzip2, xz, zlib and others under their own licenses
+            (licenses\Python-LICENSE.txt).
+
+Microsoft Visual C++ runtime (VCRUNTIME140*.dll, MSVCP140*.dll)
+  Redistributed with Python and Qt under the Microsoft Visual Studio redistribution terms.
+
+PyInstaller {PYINSTALLER_VERSION} bootloader
+  GPL-2.0-or-later with the PyInstaller bootloader exception, which allows
+  distributing the built program under any license.
+
+APFS Explorer Lite itself has no license chosen yet; contact the project owner
+before redistributing it.
